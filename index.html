@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics Of JavaScript</title>
+    <style>
+        #image{
+            width: 500px;
+           
+            border-radius: 100px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1 id="greet"></h1>
+    <!-- <img id="image" src="./pexels-math-90946.jpg" alt="" onmouseover="changepic();" onmouseout="reversepic();"> -->
+    <ul id="list">
+
+
+    </ul>
+<input type="search" id="search" placeholder="Search here...">
+<input type="button" value="search" onclick="Search();">
+
+
+    <script >
+        // let apple="red";
+        // const pi=3.142;
+        // let isgreen= false;
+        
+        // console.log("hi how are you? " +" "+  name)
+        //    document.write("hi how are you? " +" "+  name)
+        //    alert("hi " + name);
+        //    prompt("are you fine "+ name +" ? ")
+        
+// var name=prompt("what's your name?");
+
+// let element1= document.getElementById("greet");
+
+// if(name!=""){
+
+//         element1.innerHTML= "Hi "+ name;
+
+// }
+// else{
+//     element1.innerHTML= "Please enter your name to get greetings";
+// }
+
+// let number=15, number2=14;// 15 + 14 = 29
+// element1.innerHTML= number + " / "+ number2 + " = " +(number /  number2);
+
+
+// class 2:
+
+//function
+
+// function changepic(){
+// let img=document.getElementById("image");
+// img.src="./pexels-pixabay-45889.jpg"
+// img.style.border="none"
+// }
+// function reversepic(){
+// let img=document.getElementById("image");
+// img.src="./pexels-math-90946.jpg";
+// img.style.border="2px solid red"
+// }
+    
+//array
+let students=[1,2,34,5,64,822,4];
+// console.log(students.length);
+// console.log(students)
+// console.log(students[5])
+//  document.write(students[4]);
+ 
+ //printing an array using dom
+//  let name=document.createElement("ol");
+//  name.appendChild(li)
+let list=document.getElementById('list')
+function bgchange(){
+    list.style.backgroundColor="red";
+}
+
+// for(let i=0;i<7;i++){
+// list.innerHTML+= `
+// <li onmouseover="bgchange();">
+// ${students[i]} </li>`
+
+// }
+
+
+// let abc=["haris","mohsin","anas","irfan","asad", "haseeb"]
+// abc.forEach(element => {
+//     document.write("MR. "+ element.toLowerCase() +'<br>')
+// });
+
+//for the last index of the array
+students.push("end");
+students.pop();
+students.pop();
+
+//for the start index of the array
+students.unshift("start")
+students.unshift(0)
+students.shift()
+students.shift()
+
+//for any index
+// students.splice(4,2,"4th index","5th index","6th index")
+
+// students.forEach(y => {
+//     document.write(y +'<br>')
+// });
+
+
+//Objects
+let mobile={
+    height:"156 cm",
+    ram:"4gb",
+    storage:"512gb",
+    model:"note 10",
+    color:"pink",
+    battery:"6000 MAh",
+    camera:"48mp",
+    speaker:"loud speaker",
+    androidversion:"12",
+    fcam:"48mp",
+    support5g:true,
+    flashlight:"pink light"
+}
+
+//not for object
+// mobile.forEach(element => {
+//     document.write(element);
+// });
+
+
+//printing object
+// for (let key in mobile) {
+//     {
+
+//         document.write(key.toUpperCase() +" : " + mobile[key].toUpperCase() + "<br>");
+        
+//     }
+// }
+
+// document.write(mobile);
+let movies=[
+    "the meg 2",
+    "extraction 2",
+    "mission impossible: dead reckoning",
+    "money heist"
+    ,"barbie"
+]
+
+function Search(){
+let query=document.getElementById("search").value
+let lowerCaseQuery=query.toLowerCase()
+// alert(lowerCaseQuery);
+
+
+for(let i=0; i<movies.length; i++){
+
+
+    if(lowerCaseQuery==movies[i]){
+        document.write(movies[i])
+    }
+    else{
+        alert("movie not found")
+    }
+
+}system
+}
+
+
+    </script>
+</body>
+</html>
