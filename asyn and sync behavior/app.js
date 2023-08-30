@@ -20,17 +20,17 @@
 
 // Async Await
 
-async function add(){
-    let a=14;
-    let b=64;
-    let c= a + b;
-   await console.log("your answer is ...");
-    console.log(c);
-}
+// async function add(){
+//     let a=14;
+//     let b=64;
+//     let c= a + b;
+//    await console.log("your answer is ...");
+//     console.log(c);
+// }
 
-console.log("please wait")
-add();
+// console.log("please wait")
+// add();
 
-console.log("here is your answer");
-console.log("ye lo answer");
+// console.log("here is your answer");
+// console.log("ye lo answer");
 

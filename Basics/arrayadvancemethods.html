@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="search" name="search" id="search" placeholder="Search here" />
+<button onclick="Search()">Search</button>
+    <ul id="list"><h1>Search here😍</h1></ul>
+
+    <script>
+      let movies = [
+        "The Meg 2",
+        "The Meg",
+        "Extraction 2",
+        "Mission Impossible: Dead Reckoning",
+        "Mission Impossible: Ghost Protocol",
+        "Mission Impossible: Rogue Nation",
+        "The Avengers:End Game",
+        "Money Heist",
+        "Barbie",
+        "The Avengers:Age of Ultron",
+        "The Avengers:Infinity War",
+        "The Quantum Paradox",
+        "Midnight Mirage",
+        "Echoes of Eternity",
+        "Nebula's Embrace",
+        "Enigma Chronicles",
+        "Radiant Requiem",
+        "Shadow of Serenity",
+        "Shattered Dimensions",
+        "Celestial Odyssey",
+        "Veil of Whispers",
+        "Elysium Enigma",
+        "Luminous Legacy",
+        "Tempest Tango",
+        "Ascension Protocol",
+        "Chronicles of the Cosmos",
+        "Solstice Symphony",
+        "Beyond the Horizon",
+        "Nebulous Nexus",
+        "Aetherium Secrets",
+        "Serendipity's Song",
+        "Aurora Ascending",
+        "Stellar Alchemy",
+        "Dreamweaver's Dilemma",
+        "Quantum Quicksilver",
+        "Echoes from Tomorrow",
+        "Midnight Metropolis",
+        "Odyssey of Oracles",
+        "Prism's Peril",
+        "Nebula Noir",
+        "Arcane Amalgam",
+        "Echoes in Eternity",
+        "Paradox Pandora",
+        "Enchanted Eclipse",
+        "Whispers in the Void",
+        "Twilight Traverse",
+        "Ephemeral Elysium",
+        "Ethereal Enchantment",
+        "Synchronicity Saga",
+        "Echoes of the Nebula",
+        "Midnight Monolith",
+        "Zodiac Zenith",
+        "Celestial Cipher",
+        "Portal to Eternity",
+        "Nova's Nexus",
+        "Solitary Stardust",
+        "Enigma of Echoes",
+        "Nebula's End",
+        "Whispering Shadows",
+        "Quantum Quandary",
+        "Aeon Arcana",
+        "Twilight's Lullaby",
+        "Stellar Mirage",
+        "Chrono Crucible",
+        "Prism's Pathway",
+        "Labyrinth of Light",
+        "Ethereal Echo",
+        "Whispers of Infinity",
+        "Enchanted Echoes",
+        "Nova Nostalgia",
+        "Galaxy's Grasp",
+        "Veil of Vision",
+        "Ephemeral Embrace",
+        "Twilight Threnody",
+        "Ethereal Odyssey",
+        "Siren's Solace",
+        "Quantum Quasar",
+        "Arcane Aurora",
+        "Midnight Muse",
+        "Prism's Passage",
+        "Enigma Entwined",
+        "Celestial Caravan",
+        "Nebula's Nocturne",
+        "Echoes of Eden",
+        "Aetherium Alchemy",
+        "Stellar Soliloquy",
+        "Enchanted Enigma",
+        "Whispers in Wilderness",
+        "Twilight Triad",
+        "Luminous Labyrinth",
+        "Ethereal Eclipse",
+        "Nebula's Nexus",
+        "Aurora's Arc",
+        "Quantum Quest",
+        "Prism's Prism",
+        "Enchanted Odyssey",
+        "Celestial Cascade",
+        "Echoes of Empyrean",
+        "Ethereal Equinox",
+        "Twilight Travellers",
+        "Nebula Nectar",
+        "Quantum Quiescence",
+        "Stellar Serenade",
+        "Enchanted Echoes",
+        "Arcane Allegory",
+        "Celestial Chronograph",
+        "Prism's Paradox",
+        "Ephemeral Eden",
+        "Nebula's Nexus",
+        "Twilight Tapestry",
+        "Echoes of Endeavor"
+      ];
+
+      let newMovies = movies.map((a) => {
+        return a.toLowerCase();
+      });
+// console.log(newMovies)
+      let searchVal = document.getElementById("search");
+      let list = document.getElementById("list");
+      searchVal.addEventListener("keyup", Search);
+
+      function Search(event) {
+        if(event.key==='Enter'){ 
+        let query = searchVal.value.toLowerCase();
+        console.log(query);
+
+        let result = newMovies.filter((b) => {
+          return b.includes(query);
+        });
+
+        if (result.length == 0) {
+          list.innerHTML = "<h1>Movie not found😥</h1>";
+        } else {
+          list.innerHTML = "";
+          result.forEach((element) => {
+            list.innerHTML += `
+    <li>${element}</li>
+    `;
+          });
+        }  }
+      }
+
+
+    //   let searchVal = document.getElementById("search");
+    //   let list = document.getElementById("list");
+    //   searchVal.addEventListener("keyup", Search);
+
+    //   function Search(event) {
+    //     if(event.key==='Enter'){
+    //       event.preventDefault();
+       
+    //     let query = searchVal.value.toLowerCase();
+    //     console.log(query);
+
+    //     let result = newMovies.filter((b) => {
+    //       return b.includes(query);
+    //     });
+
+    //     if (result.length == 0) {
+    //       list.innerHTML = "<h1>Movie not found😥</h1>";
+    //     } else {
+    //       list.innerHTML = "";
+    //       result.forEach((element) => {
+    //         list.innerHTML += `
+    // <li>${element}</li>
+    // `;
+    //       });
+    //     } }
+    //   }
+          // let numbers=[1,2,3,4,0.5]
+          // console.log(numbers.includes(4))
+          // console.log(numbers.join(";"))
+
+      //         let square=numbers.map((a)=>{
+      // return a*a;
+      //         })
+      //         console.log(square)
+
+      // let greaterthan2=numbers.filter((a)=>{
+      //     if(a<2){
+      //         return a;
+      //     }
+      // })
+      // console.log(greaterthan2)
+
+      //     let movies=[
+      // "The Meg 2",
+      // "The Meg",
+      // "Extraction 2",
+      // "Mission Impossible: Dead Reckoning",
+      // "Mission Impossible: Ghost Protocol",
+      // "Mission Impossible: Rogue Nation",
+      // "The Avengers:End Game",
+      // "Money Heist",
+      // "Barbie"
+      //     ]
+      // array.map()
+      // let lowerCaseMovies=movies.map((b)=>{
+      //    return b.toLowerCase()
+
+      // })
+      // console.log(lowerCaseMovies)
+
+      //array.includes("the meg")
+      // let find="late";
+      // let inc= lowerCaseMovies.includes(find);
+      // console.log(inc);
+
+      //array.filter();
+      // let filteredArray=lowerCaseMovies.filter((movie)=>{
+      // if(movie.includes("sion"))
+      // {
+      //     return movie;
+      // }
+      // })
+      // console.log(filteredArray);
+
+      //array.join()
+      // console.log(lowerCaseMovies.join("😎,😂"))
+
+      // arrray.entries();
+      // let newArray= lowerCaseMovies.entries()
+
+      // for (const a of newArray) {
+      //     document.write(a+'<br>')
+      // }
+      // 0:"the meg",
+      // 0:"the meg 2",
+
+      //arry.reduce();
+      // let abc=lowerCaseMovies.reduce((b,c)=>{
+      // return b+" 🤡 "+c
+      // })
+      // console.log(abc)
+      // array.sort()
+      // console.log(lowerCaseMovies.sort())//mutable
+      // console.log(lowerCaseMovies.sort())//immutable
+      // console.log(lowerCaseMovies)
+
+      // console.log(lowerCaseMovies.toSorted())//immutable
+      // console.log(lowerCaseMovies)
+    </script>
+  </body>
+</html>
