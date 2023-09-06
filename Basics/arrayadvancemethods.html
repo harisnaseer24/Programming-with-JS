@@ -8,7 +8,7 @@
   </head>
   <body>
     <input type="search" name="search" id="search" placeholder="Search here" />
-<button onclick="Search()">Search</button>
+<button id="myBtn" onclick="Search()">Search</button>
     <ul id="list"><h1>Search here😍</h1></ul>
 
     <script>
@@ -132,10 +132,15 @@
 // console.log(newMovies)
       let searchVal = document.getElementById("search");
       let list = document.getElementById("list");
-      searchVal.addEventListener("keyup", Search);
+      searchVal.addEventListener("keyup", function(event){
+        if(event.key==='Enter'){
+          event.preventDefault();
+    document.getElementById("myBtn").click();
+        }
+      });
 
-      function Search(event) {
-        if(event.key==='Enter'){ 
+      function Search() {
+      
         let query = searchVal.value.toLowerCase();
         console.log(query);
 
@@ -153,7 +158,7 @@
     `;
           });
         }  }
-      }
+      
 
 
     //   let searchVal = document.getElementById("search");
